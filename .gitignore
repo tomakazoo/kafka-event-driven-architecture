@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# C#
+bin/
+obj/
+.vs/
+*.csproj.user
+*.user
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# Docker
+docker-compose.override.yml
+kafka-data/
+
+# Logs
+logs/
+*.log
+
+
