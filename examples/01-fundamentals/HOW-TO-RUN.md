@@ -154,11 +154,22 @@ dotnet run --project BasicProducer.csproj
 
 **Expected output:**
 ```
-Delivered to my-topic [[0]] @0
-Delivered to my-topic [[0]] @1
-Delivered to my-topic [[0]] @2
-Delivered to my-topic [[0]] @3
-Delivered to my-topic [[0]] @4
+🚀 Starting Kafka Producer...
+📡 Connecting to: localhost:9092
+✅ Producer created successfully
+📤 Producing to topic: my-topic
+📨 Sending message 0...
+✅ Delivered to my-topic [[0]] @0
+📨 Sending message 1...
+✅ Delivered to my-topic [[0]] @1
+📨 Sending message 2...
+✅ Delivered to my-topic [[0]] @2
+📨 Sending message 3...
+✅ Delivered to my-topic [[0]] @3
+📨 Sending message 4...
+✅ Delivered to my-topic [[0]] @4
+🔄 Flushing producer...
+✅ All messages delivered successfully!
 ```
 
 **What this means:**
@@ -167,6 +178,11 @@ Delivered to my-topic [[0]] @4
 - `@0`, `@1`, etc. = offset (position in the partition)
 
 The messages are now **stored in Kafka**, waiting to be consumed.
+
+**✅ Success!** Here's what a successful producer run looks like:
+
+![Producer Success](images/producer-success.png)
+*Producer successfully delivering 5 messages to Kafka*
 
 ---
 
@@ -207,6 +223,11 @@ Received: {"id":4,"value":"Message 4"}
 
 The consumer is now **running continuously**, waiting for new messages. Press **Ctrl+C** to stop it.
 
+**✅ Success!** Here's what a successful consumer run looks like:
+
+![Consumer Success](images/consumer-success.png)
+*Consumer successfully receiving messages from Kafka*
+
 ---
 
 ### **Step 6: Test Real-Time Messaging** (Optional)
@@ -238,30 +259,70 @@ This demonstrates Kafka's **real-time streaming** capability!
 
 Open your browser to: **http://localhost:8080**
 
+The Kafka UI provides a visual interface to explore your Kafka cluster, topics, messages, and consumer groups.
+
 **What you can see:**
 
-1. **Topics Tab:**
-   - `my-topic` with 10 messages (5 from each producer run)
-   - 1 partition (default for auto-created topics)
-   - Replication factor: 1
+#### 1. **Messages View**
 
-2. **Messages Tab:**
-   - Click "my-topic" → "Messages"
-   - See all messages with their keys and values
-   - JSON formatted nicely
-   - Timestamps of when they were produced
+Navigate to: **Topics** → **my-topic** → **Messages**
 
-3. **Consumers Tab:**
-   - `dotnet-consumer-group`
-   - Shows which partition(s) it's reading
-   - Current offset position (lag = 0 if caught up)
-   - Consumer is "Active" while running
+![Kafka UI Messages](images/kafka-ui-messages.png)
+*Viewing messages in the Kafka UI - showing all 20 messages with keys, values, and timestamps*
 
-4. **Brokers Tab:**
-   - Shows your single Kafka broker
-   - Broker ID: 1
-   - Status: Online
-   - Disk usage, memory, etc.
+**Features:**
+- See all messages with their keys and values
+- JSON formatted nicely
+- Timestamps of when they were produced
+- Filter by offset, partition, or search
+- View message headers and metadata
+
+#### 2. **Topics View**
+
+Navigate to: **Topics**
+
+![Kafka UI Topics](images/kafka-ui-topics.png)
+*Topics list showing my-topic with 20 messages, 1 partition, and replication factor 1*
+
+**What you'll see:**
+- `my-topic` with message count (20 messages shown)
+- 1 partition (default for auto-created topics)
+- Replication factor: 1
+- Size: 2 KB
+- Internal topics (`__consumer_offsets`, `__schemas`) are also visible
+
+#### 3. **Brokers View**
+
+Navigate to: **Brokers**
+
+![Kafka UI Brokers](images/kafka-ui-brokers.png)
+*Broker information showing broker ID 1, online partitions, and system metrics*
+
+**Information displayed:**
+- Broker ID: 1
+- Status: Online (green checkmark)
+- Disk usage: 4.37 KB, 52 segments
+- Online partitions: 52 of 52
+- Leaders: 52
+- Port: 29092
+- Host: kafka
+
+#### 4. **Consumers View**
+
+Navigate to: **Consumers**
+
+![Kafka UI Consumers](images/kafka-ui-consumers.png)
+*Consumer groups showing dotnet-consumer-group in STABLE state*
+
+**What you'll see:**
+- Consumer Group: `dotnet-consumer-group`
+- State: **STABLE** (green badge)
+- Number of Members: 1
+- Number of Topics: 1
+- Coordinator: Broker 1
+- Consumer Lag: N/A (or 0 if caught up)
+
+**💡 Pro Tip:** Keep the Kafka UI open while running producers and consumers to see real-time updates!
 
 ---
 

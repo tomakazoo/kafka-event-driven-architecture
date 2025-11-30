@@ -11,7 +11,7 @@
 🚀 INSTALLATION STEPS (Run these in order):
 
 1. Install Docker Engine:
-   cd /home/babicto/projects/kafka-event-driven-architecture
+   cd /..../projects/kafka-event-driven-architecture
    ./scripts/install-docker.sh
 
 2. Activate Docker group:
