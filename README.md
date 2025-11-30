@@ -61,7 +61,7 @@ dotnet run
 
 ## 🤝 Contributing
 
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
+Contributions welcome! See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
 
 ## 📄 License
 

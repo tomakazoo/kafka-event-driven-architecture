@@ -1,0 +1,103 @@
+╔═══════════════════════════════════════════════════════════════╗
+║     KAFKA EVENT-DRIVEN ARCHITECTURE - INSTALLATION NOTES     ║
+╚═══════════════════════════════════════════════════════════════╝
+
+✅ SYSTEM DETECTED:
+   • OS: Ubuntu 24.04 LTS on WSL 2
+   • No Docker Desktop (native Docker Engine installation)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 INSTALLATION STEPS (Run these in order):
+
+1. Install Docker Engine:
+   cd /home/babicto/projects/kafka-event-driven-architecture
+   ./scripts/install-docker.sh
+
+2. Activate Docker group:
+   newgrp docker
+
+3. Start Kafka services:
+   ./scripts/start-kafka.sh
+
+4. Verify everything works:
+   ./scripts/verify-docker.sh
+
+5. Run C# example:
+   cd examples/01-fundamentals/dotnet
+   ./run-example.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 HELPER SCRIPTS CREATED:
+
+Scripts Directory (scripts/):
+  • install-docker.sh    → Installs Docker Engine in WSL
+  • start-docker.sh      → Starts Docker daemon
+  • start-kafka.sh       → Starts all Kafka services
+  • verify-docker.sh     → Verifies Kafka is running
+  • fix-kafka.sh         → Fix Kafka issues
+  • diagnose-kafka.sh    → Diagnostic tool
+  • docker-helper.sh     → Generic Docker wrapper
+
+Documentation:
+  • docs/QUICKSTART.md        → Complete setup guide
+  • INSTALL-NOTES.txt         → This file
+  • docs/TROUBLESHOOTING.md   → Troubleshooting guide
+
+Examples Directory:
+  • examples/01-fundamentals/dotnet/run-example.sh
+    → Automated C# example runner
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 C# PROJECT FILES:
+
+  • BasicProducer.csproj → Producer project
+  • BasicProducer.cs     → Producer code
+  • BasicConsumer.csproj → Consumer project
+  • BasicConsumer.cs     → Consumer code
+
+Note: Separate projects to avoid Main() conflicts
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 QUICK REFERENCE:
+
+Daily Workflow:
+  1. Start Docker:  ./scripts/start-docker.sh
+  2. Start Kafka:   ./scripts/start-kafka.sh
+  3. Run examples:  cd examples/01-fundamentals/dotnet && ./run-example.sh
+
+Stop Everything:
+  docker compose down
+
+Start Fresh (delete data):
+  docker compose down -v
+
+View Kafka UI:
+  http://localhost:8080
+
+View Logs:
+  docker compose logs -f kafka
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION:
+
+  • docs/QUICKSTART.md   → Comprehensive setup guide
+  • docs/SETUP.md        → Original setup documentation
+  • docs/TROUBLESHOOTING.md → Troubleshooting guide
+  • docs/DOCKER-PERMISSIONS-FIX.md → Docker permissions guide
+  • README.md            → Project overview
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ NEXT STEPS:
+
+  1. Run: ./scripts/install-docker.sh
+  2. Read: docs/QUICKSTART.md
+  3. Start experimenting with Kafka!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
