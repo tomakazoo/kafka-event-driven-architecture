@@ -119,3 +119,4 @@ This folder contains screenshots demonstrating successful execution of the Kafka
 
 **Note:** These images help users verify their setup is working correctly and understand what success looks like at each step.
 
+

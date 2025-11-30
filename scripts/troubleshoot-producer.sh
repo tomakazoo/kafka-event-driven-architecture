@@ -104,3 +104,4 @@ echo "  • Restart all: docker compose restart"
 echo "  • Fresh start: ./scripts/fix-kafka.sh"
 echo ""
 
+
