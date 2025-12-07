@@ -48,3 +48,4 @@ echo "  Terminal 3: dotnet run --project ShippingService/ShippingService.csproj"
 echo "  Terminal 4: dotnet run --project OrderService/OrderService.csproj"
 echo ""
 
+

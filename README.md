@@ -7,7 +7,7 @@ Complete guide to building scalable event-driven systems with Apache Kafka. Lear
 ### Prerequisites
 
 - Docker & Docker Compose (or Docker Engine for WSL 2)
-- Python 3.9+ OR .NET 8.0+
+- .NET 8.0+ (Python examples may be added in the future)
 - Git
 
 ### Get Started (5 minutes)
@@ -16,8 +16,7 @@ Complete guide to building scalable event-driven systems with Apache Kafka. Lear
 2. Start Kafka: `./scripts/start-kafka.sh` (or `docker-compose up -d`)
 3. Verify setup: `./scripts/verify-docker.sh`
 4. Explore examples in `examples/` directory
-5. Run Python: `cd examples/01-fundamentals/python && python basic_producer.py`
-6. Run C#: `cd examples/01-fundamentals/dotnet && dotnet run --project BasicProducer.csproj`
+5. Run C#: `cd examples/01-fundamentals/dotnet && dotnet run --project BasicProducer.csproj`
 
 **📖 For detailed setup instructions, see [docs/QUICKSTART.md](docs/QUICKSTART.md)**
 
@@ -37,7 +36,7 @@ Complete guide to building scalable event-driven systems with Apache Kafka. Lear
 ## 📁 Repository Structure
 
 - `docs/` - Documentation and guides
-- `examples/` - Code examples (Python & C#)
+- `examples/` - Code examples (C# - Python examples may be added in the future)
 - `scripts/` - Helper scripts for Docker and Kafka management
 - `shared/` - Shared models and utilities
 - `docker-compose.yml` - Local Kafka setup
@@ -103,7 +102,7 @@ docs/
 
 ## 🚀 Running Examples
 
-Each example includes both Python and C# implementations. For detailed step-by-step instructions, see [examples/01-fundamentals/HOW-TO-RUN.md](examples/01-fundamentals/HOW-TO-RUN.md).
+Each example includes C# implementations. Python examples may be added in the future. For detailed step-by-step instructions, see [examples/01-fundamentals/HOW-TO-RUN.md](examples/01-fundamentals/HOW-TO-RUN.md).
 
 ### Quick Start
 
@@ -111,14 +110,6 @@ Each example includes both Python and C# implementations. For detailed step-by-s
 ```bash
 ./scripts/start-kafka.sh
 ./scripts/verify-docker.sh
-```
-
-### Python Examples
-
-```bash
-cd examples/01-fundamentals/python
-pip install -r requirements.txt
-python basic_producer.py
 ```
 
 ### C# Examples

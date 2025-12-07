@@ -8,15 +8,12 @@
 - Docker & Docker Compose
 - 4GB free disk space
 
-### Python Examples
-
-- Python 3.9+
-- pip
-
 ### C# Examples
 
 - .NET 8.0 SDK
 - Visual Studio Code or Visual Studio 2022
+
+*Note: Python examples may be added in the future*
 
 ## Installation
 
@@ -50,15 +47,6 @@ docker-compose ps
 ```
 
 ### 4. Run First Example
-
-**Python:**
-
-```bash
-cd examples/01-fundamentals/python
-pip install -r requirements.txt
-python basic_producer.py &
-python basic_consumer.py
-```
 
 **C#:**
 
@@ -95,13 +83,6 @@ docker-compose up -d
 - Verify `BOOTSTRAP_SERVERS` in config
 
 ## IDE Setup
-
-### VS Code (Python)
-
-1. Install Python extension
-2. Create virtual environment: `python -m venv venv`
-3. Activate: `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
-4. Install dependencies: `pip install -r requirements.txt`
 
 ### Visual Studio (C#)
 

@@ -392,11 +392,6 @@ If producer still hangs after all checks:
    sleep 30
    ./scripts/verify-docker.sh
    ```
-4. **Try Python producer** to isolate if it's a .NET-specific issue:
-   ```bash
-   cd examples/01-fundamentals/python
-   python basic_producer.py
-   ```
 
 ---
 
@@ -413,5 +408,6 @@ If producer still hangs after all checks:
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - General Kafka troubleshooting
 - [QUICKSTART.md](QUICKSTART.md) - Setup guide
 - [HOW-TO-RUN.md](../examples/01-fundamentals/HOW-TO-RUN.md) - Running examples guide
+
 
 

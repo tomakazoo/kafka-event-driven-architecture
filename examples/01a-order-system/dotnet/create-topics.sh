@@ -67,3 +67,4 @@ echo ""
 echo "List topics:"
 docker compose exec -T kafka kafka-topics --list --bootstrap-server localhost:9092
 
+

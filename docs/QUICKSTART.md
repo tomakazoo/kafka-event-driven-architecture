@@ -10,7 +10,7 @@ This guide will get you from zero to running Kafka examples in minutes.
 
 - WSL 2 with Ubuntu 24.04 (you have this ✅)
 - .NET 8.0 SDK (for C# examples)
-- Python 3.9+ (for Python examples)
+- *Note: Python examples may be added in the future*
 
 ---
 
@@ -96,21 +96,6 @@ Consumer:
 Received: {"id":0,"value":"Message 0"}
 Received: {"id":1,"value":"Message 1"}
 ...
-```
-
-### Option B: Python Example
-
-```bash
-cd examples/01-fundamentals/python
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run producer (in one terminal)
-python basic_producer.py
-
-# Run consumer (in another terminal)
-python basic_consumer.py
 ```
 
 ---
@@ -223,10 +208,6 @@ kafka-event-driven-architecture/
 │       │   ├── BasicConsumer.cs
 │       │   ├── BasicConsumer.csproj
 │       │   └── run-example.sh
-│       └── python/
-│           ├── requirements.txt
-│           ├── basic_producer.py
-│           └── basic_consumer.py
 └── docs/
     └── SETUP.md
 ```
@@ -246,7 +227,6 @@ kafka-event-driven-architecture/
 ## 📚 Helpful Resources
 
 - [Kafka Documentation](https://kafka.apache.org/documentation/)
-- [Confluent Kafka Python](https://docs.confluent.io/kafka-clients/python/current/overview.html)
 - [Confluent Kafka .NET](https://docs.confluent.io/kafka-clients/dotnet/current/overview.html)
 
 ---
