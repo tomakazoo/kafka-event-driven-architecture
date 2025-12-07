@@ -115,8 +115,8 @@ Change to match your blog's image structure.
 Update these placeholders:
 
 - `https://github.com/your-username/kafka-event-driven-architecture` → Your actual GitHub repo URL
-- `examples/01a-order-system/` → Actual path in your repo
-- `examples/01a-order-system/HOW-TO-RUN.md` → Actual path in your repo
+- `examples/04-build-e-commerce/` → Actual path in your repo
+- `examples/04-build-e-commerce/HOW-TO-RUN.md` → Actual path in your repo
 
 ---
 
@@ -312,7 +312,7 @@ If you need help with:
 Refer to:
 - `docs/BLOG-INTEGRATION-PROPOSAL.md` - Detailed proposal
 - `examples/01-fundamentals/HOW-TO-RUN.md` - Full guide
-- `examples/01a-order-system/HOW-TO-RUN.md` - Full guide
+- `examples/04-build-e-commerce/HOW-TO-RUN.md` - Full guide
 
 ---
 

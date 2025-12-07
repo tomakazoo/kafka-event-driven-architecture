@@ -85,7 +85,7 @@ Simple POCOs for:
 
 2. **Create Topics** (Recommended):
    ```bash
-   cd examples/01a-order-system/dotnet
+   cd examples/04-build-e-commerce/dotnet
    ./create-topics.sh
    ```
    
@@ -93,7 +93,7 @@ Simple POCOs for:
 
 3. **Start Services** (in separate terminals):
    ```bash
-   cd examples/01a-order-system/dotnet
+   cd examples/04-build-e-commerce/dotnet
    
    # Terminal 1: Customer Service
    dotnet run --project CustomerService/CustomerService.csproj

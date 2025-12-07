@@ -29,7 +29,7 @@ cd /home/babicto/projects/kafka-event-driven-architecture
 ### **Step 2: Build All Services**
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 
 # Build all projects
 dotnet build OrderService/OrderService.csproj
@@ -55,7 +55,7 @@ dotnet build ShippingService/ShippingService.csproj
 Run the helper script to create all topics:
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 ./create-topics.sh
 ```
 
@@ -128,7 +128,7 @@ docker compose exec kafka kafka-topics --list --bootstrap-server localhost:9092
 **Terminal 1:**
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project CustomerService/CustomerService.csproj
 ```
 
@@ -157,7 +157,7 @@ dotnet run --project CustomerService/CustomerService.csproj
 **Terminal 2:**
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project InventoryService/InventoryService.csproj
 ```
 
@@ -183,7 +183,7 @@ dotnet run --project InventoryService/InventoryService.csproj
 **Terminal 3:**
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project ShippingService/ShippingService.csproj
 ```
 
@@ -209,7 +209,7 @@ dotnet run --project ShippingService/ShippingService.csproj
 **Terminal 4:**
 
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project OrderService/OrderService.csproj
 ```
 
@@ -465,7 +465,7 @@ Press **Ctrl+C** in each terminal to stop the services gracefully.
 
 **Solution 1: Create topics manually (Recommended)**
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 ./create-topics.sh
 ```
 

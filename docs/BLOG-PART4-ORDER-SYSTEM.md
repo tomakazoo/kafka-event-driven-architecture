@@ -106,7 +106,7 @@ cd kafka-event-driven-architecture
 ./scripts/start-kafka.sh
 
 # Create topics with proper partitions
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 ./create-topics.sh
 ```
 
@@ -258,25 +258,25 @@ Start each service in a separate terminal:
 
 **Terminal 1 - Customer Service:**
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project CustomerService/CustomerService.csproj
 ```
 
 **Terminal 2 - Inventory Service:**
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project InventoryService/InventoryService.csproj
 ```
 
 **Terminal 3 - Shipping Service:**
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project ShippingService/ShippingService.csproj
 ```
 
 **Terminal 4 - Order Service (creates orders):**
 ```bash
-cd examples/01a-order-system/dotnet
+cd examples/04-build-e-commerce/dotnet
 dotnet run --project OrderService/OrderService.csproj
 ```
 
@@ -481,10 +481,10 @@ This is the foundation for production event-driven systems.
 - **Part 7:** Operating in production (monitoring, debugging, deployment)
 
 **Full code and detailed guide:**  
-[GitHub Repository](https://github.com/your-username/kafka-event-driven-architecture) → `examples/01a-order-system/`
+[GitHub Repository](https://github.com/your-username/kafka-event-driven-architecture) → `examples/04-build-e-commerce/`
 
 **Complete walkthrough:**  
-[HOW-TO-RUN.md](https://github.com/your-username/kafka-event-driven-architecture/blob/main/examples/01a-order-system/HOW-TO-RUN.md)
+[HOW-TO-RUN.md](https://github.com/your-username/kafka-event-driven-architecture/blob/main/examples/04-build-e-commerce/HOW-TO-RUN.md)
 
 ---
 

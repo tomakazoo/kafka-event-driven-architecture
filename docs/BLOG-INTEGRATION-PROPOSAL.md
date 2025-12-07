@@ -10,7 +10,7 @@
 
 **Available Examples:**
 - `01-fundamentals` - Basic producer/consumer (simple, educational)
-- `01a-order-system` - Complete microservices example (complex, real-world)
+- `04-build-e-commerce` - Complete microservices example (complex, real-world)
 
 ---
 
@@ -185,7 +185,7 @@ Enhance existing Part 4 with the order system example.
 > "A complete event-driven e-commerce flow (order API, email, inventory, analytics)."
 
 **Enhancement:**
-- Replace generic description with actual `01a-order-system` example
+- Replace generic description with actual `04-build-e-commerce` example
 - Include all 4 services (Order, Customer, Inventory, Shipping)
 - Show complete event flow with screenshots
 - Demonstrate error handling and rejection flows
@@ -203,7 +203,7 @@ We'll build a real-world e-commerce order system with 4 microservices:
 3. Inventory Service - Reserves stock
 4. Shipping Service - Creates shipments
 
-[Full walkthrough from 01a-order-system/HOW-TO-RUN.md]
+[Full walkthrough from 04-build-e-commerce/HOW-TO-RUN.md]
 
 ### Event Flow Visualization
 
@@ -468,8 +468,8 @@ We'll build a real-world e-commerce order system with 4 microservices:
 - "Complete setup guide: [GitHub repo]/docs/QUICKSTART.md"
 
 **In Part 4:**
-- "Complete code: [GitHub repo]/examples/01a-order-system"
-- "Detailed walkthrough: [GitHub repo]/examples/01a-order-system/HOW-TO-RUN.md"
+- "Complete code: [GitHub repo]/examples/04-build-e-commerce"
+- "Detailed walkthrough: [GitHub repo]/examples/04-build-e-commerce/HOW-TO-RUN.md"
 - "Troubleshooting: [GitHub repo]/docs/PRODUCER-TROUBLESHOOTING.md"
 
 ---
