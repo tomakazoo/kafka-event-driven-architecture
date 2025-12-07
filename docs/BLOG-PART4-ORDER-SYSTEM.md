@@ -19,8 +19,8 @@ We'll build four microservices that work together to process orders:
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    Order Service                        │
-│              (Event Producer)                          │
-│  Creates orders → publishes "orders-created" events    │
+│              (Event Producer)                           │
+│  Creates orders → publishes "orders-created" events     │
 └──────────────────────┬──────────────────────────────────┘
                        │
                        ↓
@@ -32,15 +32,15 @@ We'll build four microservices that work together to process orders:
         ┌───────────────┼───────────────┐
         ↓                               ↓
 ┌───────────────┐            ┌──────────────────┐
-│   Customer    │            │    Inventory      │
-│   Service     │            │     Service       │
-│ (Consumer →   │            │  (Consumer →      │
+│   Customer    │            │    Inventory     │
+│   Service     │            │     Service      │
+│ (Consumer →   │            │  (Consumer →     │
 │  Producer)    │            │   Producer)      │
 │               │            │                  │
 │ Validates     │            │ Reserves stock   │
 │ customers     │            │                  │
 │               │            │                  │
-│ → orders-     │            │ → inventory-    │
+│ → orders-     │            │ → inventory-     │
 │   validated   │            │   reserved       │
 │ → orders-     │            │ → inventory-     │
 │   rejected    │            │   insufficient   │
@@ -48,26 +48,26 @@ We'll build four microservices that work together to process orders:
         │                             │
         └───────────────┬─────────────┘
                         ↓
-              ┌─────────────────┐
-              │  Kafka Broker   │
+              ┌──────────────────┐
+              │  Kafka Broker    │
               │ orders-validated │
-              │ inventory-      │
-              │ reserved        │
+              │ inventory-       │
+              │ reserved         │
               └────────┬─────────┘
                        │
                        ↓
               ┌─────────────────┐
               │   Shipping      │
               │   Service       │
-              │ (Consumer →    │
-              │  Producer)     │
+              │ (Consumer →     │
+              │  Producer)      │
               │                 │
-              │ Waits for BOTH │
-              │ validation AND │
-              │ inventory      │
+              │ Waits for BOTH  │
+              │ validation AND  │
+              │ inventory       │
               │                 │
               │ → orders-       │
-              │   shipped      │
+              │   shipped       │
               └─────────────────┘
 ```
 
