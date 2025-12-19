@@ -58,8 +58,8 @@ Wait for all services to start (~2 minutes). You'll see:
 
 ## 📊 Architecture
 ```
-┌─────────────┐      pricing-updates      ┌──────────────┐
-│   Pricing   ├──────────────────────────>│     NAV      │
+┌─────────────┐      pricing-updates       ┌──────────────┐
+│   Pricing   ├───────────────────────────>│     NAV      │
 │   Service   │        (Kafka)             │  Calculator  │
 └─────────────┘                            └──────┬───────┘
                                                   │
