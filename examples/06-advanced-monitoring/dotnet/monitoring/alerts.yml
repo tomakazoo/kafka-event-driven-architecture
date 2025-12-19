@@ -1,0 +1,30 @@
+groups:
+  - name: event_processing
+    interval: 30s
+    rules:
+      - alert: HighErrorRate
+        expr: rate(events_processed_total{status="error"}[5m]) > 0.05
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate detected"
+          description: "Service {{ $labels.service }} has error rate of {{ $value }} errors/sec"
+
+      - alert: SlowProcessing
+        expr: rate(event_processing_duration_seconds_sum[5m]) / rate(event_processing_duration_seconds_count[5m]) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow event processing"
+          description: "Service {{ $labels.service }} is processing events slowly (avg {{ $value }}s)"
+
+      - alert: NoEventsProcessed
+        expr: rate(events_processed_total[5m]) == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "No events being processed"
+          description: "Service {{ $labels.service }} hasn't processed any events in 5 minutes"

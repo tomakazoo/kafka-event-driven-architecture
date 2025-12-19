@@ -1,0 +1,352 @@
+.App {
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.dashboard-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-link.grafana {
+  background: linear-gradient(135deg, #F46800 0%, #E63946 100%);
+}
+
+.dashboard-link.jaeger {
+  background: linear-gradient(135deg, #60D0E4 0%, #3BAFDA 100%);
+}
+
+.dashboard-link.prometheus {
+  background: linear-gradient(135deg, #E6522C 0%, #C5221F 100%);
+}
+
+.statistics-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card.success {
+  background: rgba(46, 213, 115, 0.2);
+}
+
+.stat-card.error {
+  background: rgba(255, 71, 87, 0.2);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.controls-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.controls-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.fund-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fund-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.fund-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fund-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fund-id {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #ffd93d;
+}
+
+.fund-name {
+  font-size: 1rem;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.month-end-button {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.month-end-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.month-end-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clear-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.clear-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.results-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.results-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  border-left: 4px solid;
+}
+
+.result-card.success {
+  border-left-color: #2ecc71;
+}
+
+.result-card.error {
+  border-left-color: #e74c3c;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fund-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-badge.success {
+  background: rgba(46, 213, 115, 0.3);
+}
+
+.status-badge.error {
+  background: rgba(255, 71, 87, 0.3);
+}
+
+.result-body {
+  margin-bottom: 1rem;
+}
+
+.result-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.result-detail .label {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.result-detail .value {
+  font-weight: 600;
+}
+
+.correlation-id {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 4px;
+}
+
+.result-footer {
+  opacity: 0.6;
+  font-size: 0.85rem;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-links {
+    flex-direction: column;
+  }
+  
+  .fund-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
