@@ -22,6 +22,11 @@ cd /home/babicto/projects/kafka-event-driven-architecture
 ./scripts/verify-docker.sh
 ```
 
+**If services are not ready after waiting for 30 seconds then you can run:**
+```bash
+cd /home/babicto/projects/kafka-event-driven-architecture
+./scripts/fix-kafka.sh
+```
 **Expected:** All Kafka services running and accessible.
 
 ---
