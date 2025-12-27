@@ -79,3 +79,4 @@ public record OrderShipped(
     string TrackingNumber
 ) : DomainEvent(EventId, AggregateId, EventType, Timestamp, Version);
 
+

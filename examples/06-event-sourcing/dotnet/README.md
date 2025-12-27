@@ -50,7 +50,7 @@ cd /home/babicto/projects/kafka-event-driven-architecture
 ### Step 2: Build Projects
 
 ```bash
-cd examples/06-advanced-patterns/dotnet
+cd examples/06-event-sourcing/dotnet
 dotnet build EventSourcing.sln
 ```
 
@@ -252,4 +252,5 @@ dotnet build
 ---
 
 **Happy Event Sourcing! 🎉**
+
 

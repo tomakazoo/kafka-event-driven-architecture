@@ -68,7 +68,7 @@ docker compose exec kafka kafka-topics --list --bootstrap-server localhost:9092
 
 **Navigate to the example directory:**
 ```bash
-cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-advanced-patterns/dotnet
+cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-event-sourcing/dotnet
 ```
 
 **Build all projects:**
@@ -205,7 +205,7 @@ dotnet run --project Examples/OrderService.csproj
 
 **In a new terminal, run:**
 ```bash
-cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-advanced-patterns/dotnet
+cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-event-sourcing/dotnet
 dotnet run --project Examples/EventReplay.csproj
 ```
 
@@ -275,7 +275,7 @@ dotnet run --project Examples/EventReplay.csproj
 
 **In a new terminal, run:**
 ```bash
-cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-advanced-patterns/dotnet
+cd /home/babicto/projects/kafka-event-driven-architecture/examples/06-event-sourcing/dotnet
 dotnet run --project Examples/TimeTravel.csproj
 ```
 
@@ -479,4 +479,5 @@ order.LoadFromHistory(events);  // Rebuild state
 ---
 
 **Happy Event Sourcing! 🎉**
+
 

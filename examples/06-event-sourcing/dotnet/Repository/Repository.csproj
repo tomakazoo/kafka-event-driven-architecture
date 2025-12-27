@@ -5,11 +5,9 @@
     <LangVersion>12</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Confluent.Kafka" Version="2.12.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="../Domain/Domain.csproj" />
+    <ProjectReference Include="../EventStore/EventStore.csproj" />
   </ItemGroup>
 </Project>
+
 

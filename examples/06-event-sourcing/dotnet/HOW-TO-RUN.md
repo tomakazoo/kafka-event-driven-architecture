@@ -29,7 +29,7 @@ cd /home/babicto/projects/kafka-event-driven-architecture
 ### **Step 2: Build All Projects**
 
 ```bash
-cd examples/06-advanced-patterns/dotnet
+cd examples/06-event-sourcing/dotnet
 dotnet build EventSourcing.sln
 ```
 
@@ -311,7 +311,7 @@ Run TimeTravel example, then modify it to query different timestamps:
 ### **Build errors?**
 
 ```bash
-cd examples/06-advanced-patterns/dotnet
+cd examples/06-event-sourcing/dotnet
 dotnet clean
 dotnet restore
 dotnet build
@@ -364,4 +364,5 @@ This is expected when:
 ---
 
 **Happy Event Sourcing! 🚀**
+
 

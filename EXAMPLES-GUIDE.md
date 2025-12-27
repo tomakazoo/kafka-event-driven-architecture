@@ -226,7 +226,7 @@ dotnet build
 
 ---
 
-## 📁 Example 3: Event Sourcing (`examples/06-advanced-patterns/dotnet`)
+## 📁 Example 3: Event Sourcing (`examples/06-event-sourcing/dotnet`)
 
 ### What It Demonstrates
 - Event sourcing pattern with Kafka as event store
@@ -247,7 +247,7 @@ cd /home/babicto/projects/kafka-event-driven-architecture
 
 **Step 2: Build Projects**
 ```bash
-cd examples/06-advanced-patterns/dotnet
+cd examples/06-event-sourcing/dotnet
 dotnet build EventSourcing.sln
 ```
 
@@ -311,7 +311,7 @@ Event Replay → Rebuild State
 
 **Build errors?**
 ```bash
-cd examples/06-advanced-patterns/dotnet
+cd examples/06-event-sourcing/dotnet
 dotnet clean
 dotnet restore
 dotnet build
