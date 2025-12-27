@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+    <StartupObject>TimeTravel</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.12.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Domain/Domain.csproj" />
+    <ProjectReference Include="../EventStore/EventStore.csproj" />
+    <ProjectReference Include="../Repository/Repository.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="OrderService.cs" />
+    <Compile Remove="EventReplay.cs" />
+  </ItemGroup>
+</Project>
+

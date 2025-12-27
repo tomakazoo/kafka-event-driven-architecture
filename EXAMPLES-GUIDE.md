@@ -226,7 +226,109 @@ dotnet build
 
 ---
 
-## 📁 Example 3: Advanced Monitoring (`examples/07-advanced-monitoring/dotnet`)
+## 📁 Example 3: Event Sourcing (`examples/06-advanced-patterns/dotnet`)
+
+### What It Demonstrates
+- Event sourcing pattern with Kafka as event store
+- Aggregate pattern with domain events
+- Event replay to rebuild state
+- Time travel queries (view state at any point in time)
+- Optimistic locking for concurrency control
+- Snapshots for performance optimization
+
+### Quick Start
+
+**Step 1: Start Kafka Infrastructure**
+```bash
+cd /home/babicto/projects/kafka-event-driven-architecture
+./scripts/start-kafka.sh
+./scripts/verify-docker.sh
+```
+
+**Step 2: Build Projects**
+```bash
+cd examples/06-advanced-patterns/dotnet
+dotnet build EventSourcing.sln
+```
+
+**Step 3: Run Examples**
+
+**Order Service** (Basic event sourcing):
+```bash
+dotnet run --project Examples/OrderService.csproj
+```
+
+**Event Replay** (Rebuild state from events):
+```bash
+dotnet run --project Examples/EventReplay.csproj
+```
+
+**Time Travel** (View state at different points in time):
+```bash
+dotnet run --project Examples/TimeTravel.csproj
+```
+
+**Expected Flow:**
+1. Order created → `OrderCreated` event
+2. Items added → `ItemAdded` events
+3. Address set → `ShippingAddressSet` event
+4. Order submitted → `OrderSubmitted` event
+5. Payment received → `PaymentReceived` event
+6. All events stored in Kafka topic `order-events`
+7. State rebuilt by replaying events
+
+**Step 4: View Events in Kafka UI**
+- Open: http://localhost:8080
+- Navigate to: Topics → order-events → Messages
+- See all domain events with versions and timestamps
+
+### Architecture
+```
+Order Aggregate
+    ↓ (Commands)
+Domain Events
+    ↓
+Kafka Event Store (order-events topic)
+    ↓
+Event Replay → Rebuild State
+```
+
+### Key Concepts
+- **Event Sourcing**: Store events instead of current state
+- **Aggregate**: Order aggregate with business logic
+- **Event Store**: Kafka topic stores all events
+- **Event Replay**: Rebuild state by applying events
+- **Time Travel**: Query state at any timestamp
+- **Optimistic Locking**: Version-based concurrency control
+
+### Troubleshooting
+
+**Kafka not running?**
+```bash
+./scripts/start-kafka.sh
+./scripts/verify-docker.sh
+```
+
+**Build errors?**
+```bash
+cd examples/06-advanced-patterns/dotnet
+dotnet clean
+dotnet restore
+dotnet build
+```
+
+**Events not appearing?**
+- Check Kafka topic: `docker compose exec kafka kafka-topics --list --bootstrap-server localhost:9092`
+- View in Kafka UI: http://localhost:8080
+- Verify events are being published
+
+**ConcurrencyException?**
+- Expected when two processes modify same aggregate
+- Retry with latest version
+
+---
+
+## 📁 Example 4: Advanced Monitoring (`examples/07-advanced-monitoring/dotnet`)
 
 ### What It Demonstrates
 - Full observability stack (Prometheus, Grafana, Jaeger)
@@ -544,15 +646,16 @@ curl http://localhost:5004/health
 
 ## 🎯 Example Comparison
 
-| Feature | 01-Fundamentals | 04-E-Commerce | 07-Monitoring |
-|---------|----------------|---------------|---------------|
-| **Services** | 2 (Producer, Consumer) | 4 (Order, Customer, Inventory, Shipping) | 3 (Pricing, NAV Calc, Notification) |
-| **Kafka Setup** | Main docker-compose.yml | Main docker-compose.yml | Own docker-compose.yml |
-| **Topics** | 1 (my-topic) | 6 topics | 2 topics |
-| **Monitoring** | Kafka UI only | Kafka UI only | Prometheus, Grafana, Jaeger |
-| **UI** | None | None | React Demo UI |
-| **Load Testing** | None | None | LoadTester tool |
-| **Complexity** | ⭐ Basic | ⭐⭐ Intermediate | ⭐⭐⭐ Advanced |
+| Feature | 01-Fundamentals | 04-E-Commerce | 06-Event-Sourcing | 07-Monitoring |
+|---------|----------------|---------------|-------------------|---------------|
+| **Services** | 2 (Producer, Consumer) | 4 (Order, Customer, Inventory, Shipping) | 3 Examples (OrderService, EventReplay, TimeTravel) | 3 (Pricing, NAV Calc, Notification) |
+| **Kafka Setup** | Main docker-compose.yml | Main docker-compose.yml | Main docker-compose.yml | Own docker-compose.yml |
+| **Topics** | 1 (my-topic) | 6 topics | 1 (order-events) | 2 topics |
+| **Monitoring** | Kafka UI only | Kafka UI only | Kafka UI only | Prometheus, Grafana, Jaeger |
+| **UI** | None | None | None | React Demo UI |
+| **Load Testing** | None | None | None | LoadTester tool |
+| **Pattern** | Producer/Consumer | Event-Driven | Event Sourcing | Observability |
+| **Complexity** | ⭐ Basic | ⭐⭐ Intermediate | ⭐⭐⭐ Advanced | ⭐⭐⭐ Advanced |
 
 ---
 
@@ -577,4 +680,5 @@ curl http://localhost:5004/health
 ---
 
 **Happy Event Streaming! 🎉**
+
 
