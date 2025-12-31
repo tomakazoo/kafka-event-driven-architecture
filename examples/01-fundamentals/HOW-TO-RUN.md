@@ -128,6 +128,10 @@ Try running this script again in a few seconds
 
 Just wait 10-20 seconds and run it again. Kafka takes a moment to fully initialize.
 
+**Kafka won't start?**
+```bash
+./scripts/fix-kafka.sh
+```
 ---
 
 ### **Step 4: Run the C# Producer**
