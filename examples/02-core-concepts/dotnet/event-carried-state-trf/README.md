@@ -131,3 +131,4 @@ The event published by `OrderService` includes:
 - [Event Sourcing Pattern](../06-event-sourcing/dotnet/README.md) - Related pattern
 - [Saga Pattern](../06-saga/dotnet/README.md) - Distributed transactions
 
+
