@@ -36,3 +36,4 @@ namespace LogCompaction.Examples
     }
 }
 
+

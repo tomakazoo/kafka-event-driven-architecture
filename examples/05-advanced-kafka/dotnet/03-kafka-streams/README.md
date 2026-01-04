@@ -109,3 +109,4 @@ In production, use:
 
 This example demonstrates concepts but uses manual processing. For production, consider Kafka Streams or ksqlDB.
 
+

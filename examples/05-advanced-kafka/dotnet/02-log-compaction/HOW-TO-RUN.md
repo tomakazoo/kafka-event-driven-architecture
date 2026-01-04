@@ -196,3 +196,4 @@ docker compose exec kafka kafka-configs --bootstrap-server localhost:9092 \
 - Learn performance tuning (04-performance-tuning)
 - Understand security (05-security)
 
+
