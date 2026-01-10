@@ -78,6 +78,3 @@ The Store Team
         Console.WriteLine($"   Content:\n{content}");
     }
 }
-
-
-

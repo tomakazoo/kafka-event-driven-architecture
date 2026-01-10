@@ -197,3 +197,4 @@ docker compose exec kafka kafka-configs --bootstrap-server localhost:9092 \
 - Understand security (05-security)
 
 
+
